@@ -4,11 +4,9 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $method = $_SERVER['REQUEST_METHOD'];
-$request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
-$input = json_decode(file_get_contents('php://input'),true);
 
 if ($method == 'GET') {
-    $products_arr = [
+    $books_arr = [
               array("id" => 1,
                 "name" => "book1",
                 "author" => "author1",
@@ -30,6 +28,6 @@ if ($method == 'GET') {
                 ];
 
     http_response_code(200);
-	echo json_encode($products_arr);
+	echo json_encode($books_arr);
 }
 ?>
