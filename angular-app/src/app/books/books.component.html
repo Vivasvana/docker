@@ -1,0 +1,7 @@
+<h1 class="text-center">Book List</h1>
+<div *ngFor="let book of books; let ind = index" class="book">
+  <div class="book__name">{{book.name}}</div>
+  <div class="book__author">Author: {{book.author}}</div>
+  <a class="book__link" [routerLink]="['/books', book.id]" href="#">View Book</a>
+</div>
+

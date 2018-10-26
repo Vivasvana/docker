@@ -1,8 +1,10 @@
-var uri = 'http://192.168.99.100:100';
+var uri = 'http://192.168.99.100:3000';
 
 $( document ).ready(function() {
     $.ajax({
-        url: uri + '/api/books.php',
+        url: uri + '/books',
+        type: 'GET',
+        crossDomain: true,
         data: {
             format: 'json'
         },

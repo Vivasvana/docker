@@ -1,16 +1,23 @@
 version: '3.1'
 
 services:
-  fe:
-    build: ./fe
+  be:
+    build:
+       dockerfile: Dockerfile
+       context: ./node
     restart: always
-    image: fe
+    image: node-app
+    volumes:
+      - ./node/app/routes:/usr/app/routes
+    ports:
+      - 3000:8080
+
+  fe:
+    build: ./angular-app
+    restart: always
+    image: angular-app
+    environment:
+      NODE_ENV: production
     ports:
       - 4000:80
-
-  be:
-     build: ./be
-     image: be
-     restart: always
-     ports:
-      - 100:80
+    command: [nginx-debug, '-g', 'daemon off;']

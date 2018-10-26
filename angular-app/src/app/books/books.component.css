@@ -1,0 +1,21 @@
+.book{
+  background: #ccc;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.book__author{
+  font-size: 16px;
+  font-style: italic;
+  padding:  0 10px;
+}
+.book__name{
+  font-size: 20px;
+  font-weight: bold;
+  padding:  0 10px;
+}
+
+.book__link{
+  margin-left: auto;
+}
